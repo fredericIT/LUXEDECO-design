@@ -1,0 +1,76 @@
+.bottom-bar {
+  background: var(--dark);
+  padding: 1rem 0;
+}
+
+.bottom-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* Stars */
+.bottom-bar__stars {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.bottom-bar__star {
+  color: var(--gold-light);
+  font-size: 1.3rem;
+}
+
+/* Stat */
+.bottom-bar__stat-number {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+/* Center Progress */
+.bottom-bar__center {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  max-width: 400px;
+}
+
+.bottom-bar__progress-track {
+  flex: 1;
+  height: 6px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.bottom-bar__progress-fill {
+  width: 65%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold-dark), var(--gold-light));
+  border-radius: 3px;
+  animation: progressPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes progressPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.bottom-bar__heart {
+  color: var(--gold-light);
+  font-size: 1.1rem;
+}
+
+/* Icon */
+.bottom-bar__icon {
+  color: rgba(255,255,255,0.5);
+  font-size: 1.4rem;
+}
+
+@media (max-width: 600px) {
+  .bottom-bar__inner { flex-wrap: wrap; justify-content: center; }
+  .bottom-bar__center { max-width: 100%; order: 3; }
+}

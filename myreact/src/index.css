@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+/* ─── Design Tokens ─────────────────────────────────────────── */
+:root {
+  --gold:       #9a7b3e;
+  --gold-light: #c4a35a;
+  --gold-dark:  #6b5429;
+  --dark:       #111111;
+  --dark-2:     #1a1a1a;
+  --dark-3:     #222222;
+  --grey-warm:  #3d3b37;
+  --grey-mid:   #5a5750;
+  --grey-light: #b0aea8;
+  --off-white:  #f5f3ef;
+  --white:      #ffffff;
+  --section-bg: #f9f8f5;
+  --footer-bg:  #d4d0ca;
+
+  --font-body:    'Outfit', sans-serif;
+  --font-heading: 'Playfair Display', serif;
+
+  --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-card: 0 8px 32px rgba(0,0,0,0.18);
+  --shadow-hover:0 16px 48px rgba(0,0,0,0.28);
+}
+
+/* ─── Reset ─────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--off-white);
+  color: var(--dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img { display: block; width: 100%; object-fit: cover; }
+
+a { text-decoration: none; color: inherit; }
+
+ul { list-style: none; }
+
+button { cursor: pointer; font-family: var(--font-body); }
+
+/* ─── Utility ────────────────────────────────────────────────── */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.gold-text { color: var(--gold-light); }

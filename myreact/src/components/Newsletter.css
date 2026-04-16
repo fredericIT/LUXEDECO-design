@@ -1,0 +1,129 @@
+.newsletter {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 420px;
+  background: var(--grey-warm);
+  overflow: hidden;
+}
+
+.newsletter--visible .newsletter__content {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Left */
+.newsletter__left {
+  display: flex;
+  align-items: center;
+  padding: 3rem 3.5rem;
+  background: var(--grey-warm);
+}
+
+.newsletter__content {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.newsletter__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.newsletter__title-icon {
+  font-size: 1.6rem;
+}
+
+.newsletter__desc {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 2rem;
+}
+
+.newsletter__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-width: 360px;
+}
+
+.newsletter__input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding: 0.8rem 0;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--white);
+  outline: none;
+  transition: border-color var(--transition);
+}
+
+.newsletter__input::placeholder {
+  color: rgba(255,255,255,0.4);
+}
+
+.newsletter__input:focus {
+  border-color: var(--gold-light);
+}
+
+.newsletter__btn {
+  align-self: flex-start;
+  padding: 0.7rem 2rem;
+  background: var(--gold);
+  color: var(--white);
+  border: none;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.newsletter__btn:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+/* Right Image */
+.newsletter__right {
+  position: relative;
+  overflow: hidden;
+}
+
+.newsletter__right img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.newsletter:hover .newsletter__right img {
+  transform: scale(1.04);
+}
+
+.newsletter__right-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--grey-warm) 0%, transparent 30%);
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .newsletter {
+    grid-template-columns: 1fr;
+  }
+  .newsletter__left {
+    padding: 2.5rem 2rem;
+  }
+  .newsletter__right {
+    height: 280px;
+  }
+}
